@@ -27,10 +27,10 @@ export const protectRoute = [
       req.userId = user._id.toString();
 
       next();
-    } catch (err) {
+    } catch (error) {
       
-      res.status(500).json({ message: 'Server error' });
-      next(err);
+      res.status(500)
+      next(error);
     }
   },
 ];
